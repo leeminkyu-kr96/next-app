@@ -1,63 +1,65 @@
 # Snug Stay
 
-A modern accommodation booking platform built with Next.js and Tailwind CSS.
+Modern and user-friendly accommodation booking platform built with Next.js and TypeScript.
 
-## Features
+## 🚀 Project Status
 
-- 🔍 Smart Search Interface
-  - Location search with suggestions
-  - Date range picker with visual date range highlighting
-  - Guest selector (Adults & Children)
-  - Real-time search feedback
+### Completed Pages
+- ✅ **Main Page** - Fully implemented with responsive design
+- 🟡 **Search Page** - Basic layout implemented
+- 🟡 **Login Page** - Basic implementation completed
 
-- 📅 Date Selection
-  - Interactive calendar interface
-  - Visual date range highlighting
-  - Automatic transition to guest selection
-  - Check-in and check-out date management
+### Upcoming Pages
+- 🔄 **Search Filters** - In planning
+- 📝 **Accommodation Details** - In planning
+- 👤 **My Page** - In planning
+- 💬 **Customer Support / 1:1 Chat** - In planning
 
-- 👥 Guest Management
-  - Adult and children count selection
-  - Intuitive increment/decrement controls
-  - Clear guest count display
+## 🛠 Tech Stack
 
-## Tech Stack
-
-- Next.js 14
+- Next.js 13+
 - TypeScript
 - Tailwind CSS
-- Lucide React Icons
+- React
+- Node.js
 
-## Getting Started
+## 🔧 Installation
 
-1. Clone the repository:
+1. Clone the repository
 ```bash
-git clone https://github.com/leeminkyu-kr96/next-app.git
+git clone [repository-url]
 ```
 
-2. Install dependencies:
+2. Install dependencies
 ```bash
 npm install
 ```
 
-3. Run the development server:
+3. Run the development server
 ```bash
 npm run dev
 ```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+## 🌐 Branch Structure
 
-## Project Structure
+- `main` - Production-ready code
+- `dev` - Development branch for integration
+- Feature branches will be created from `dev` branch
 
-```
-src/
-├── app/              # Next.js app directory
-├── components/       # React components
-├── hooks/           # Custom React hooks
-├── lib/             # Utility functions
-└── public/          # Static assets
-```
+## 📱 Features
 
-## Contributing
+- Responsive design for all screen sizes
+- Modern UI/UX with Tailwind CSS
+- Server-side rendering with Next.js
+- Type-safe development with TypeScript
 
-Feel free to submit issues and pull requests.
+## 🤝 Contributing
+
+1. Create a feature branch from `dev`
+2. Implement your changes
+3. Create a pull request to `dev`
+4. After review, changes will be merged to `dev`
+
+## 📄 License
+
+[License details to be added]

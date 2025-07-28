@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { Search, CalendarDays, Users } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 import { useOnClickOutside } from '@/hooks/useOnClickOutside';
 import { formatDateRange, getTotalGuestsText, SearchMode, GuestType } from '@/lib/utils';
 import { LocationSearch } from './LocationSearch';
@@ -21,6 +22,7 @@ export const SearchCard: React.FC<SearchCardProps> = ({
     selectedDates, onDatesChange,
     guests, children, onGuestChange,
 }) => {
+    const router = useRouter();
     const [isSearchOpen, setIsSearchOpen] = useState(false);
     const [searchMode, setSearchMode] = useState<SearchMode>('location');
     const searchRef = useRef<HTMLDivElement>(null);
@@ -80,7 +82,7 @@ export const SearchCard: React.FC<SearchCardProps> = ({
                     <Users size={12} className="text-gray-400" />
                     <p className="text-xs tracking-tighter">{getTotalGuestsText(guests, children)}</p>
                 </div>
-                <button className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center hover:bg-orange-600 transition-colors">
+                <button className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center hover:bg-orange-600 transition-colors" onClick={() => router.push('/search')}>
                     <img src="/icons/search.svg" alt="Search" className="w-3.5 h-3.5" />
                 </button>
             </div>
