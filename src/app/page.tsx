@@ -2,9 +2,7 @@
 
 import React, { useState, useCallback } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { PlusCircle } from "lucide-react";
 import { SearchCard } from "@/components/SearchCard";
 import { GuestType } from "@/lib/utils";
 
@@ -60,7 +58,7 @@ export default function IndexPage() {
           selectedDates={selectedDates}
           onDatesChange={setSelectedDates}
           guests={guests}
-          children={children}
+          childrenCount={children}
           onGuestChange={handleGuestChange}
         />
       </div>

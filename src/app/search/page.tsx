@@ -1,10 +1,9 @@
 "use client";
 
 import React from "react";
-import { Search, MapPin, Home, Users, Heart } from "lucide-react";
+import { MapPin, Home, Users, Heart } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import Header from "@/components/Header";
 
 export default function SearchPage() {
   const router = useRouter();

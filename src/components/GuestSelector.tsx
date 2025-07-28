@@ -9,7 +9,7 @@ interface GuestSelectorProps {
   onDone: () => void;
 }
 
-export const GuestSelector: React.FC<GuestSelectorProps> = ({ guests, children, onGuestChange, onDone }) => (
+export const GuestSelector: React.FC<GuestSelectorProps> = ({ guests, children: childrenCount, onGuestChange, onDone }) => (
   <div>
     <p className="text-[10px] font-bold text-gray-600 tracking-tighter mb-2">Select Number of Guests</p>
     <GuestCounter
@@ -23,10 +23,10 @@ export const GuestSelector: React.FC<GuestSelectorProps> = ({ guests, children, 
     <GuestCounter
       title="Children"
       subtitle="Ages 0-12"
-      count={children}
+      count={childrenCount}
       onIncrement={() => onGuestChange('children', true)}
       onDecrement={() => onGuestChange('children', false)}
-      isDecrementDisabled={children <= 0}
+      isDecrementDisabled={childrenCount <= 0}
     />
     <button onClick={onDone} className="w-full mt-4 py-2 bg-orange-500 text-white rounded-lg text-sm font-medium hover:bg-orange-600 transition-colors">
       Done

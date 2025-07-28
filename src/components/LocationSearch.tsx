@@ -28,9 +28,9 @@ export const LocationSearch: React.FC<LocationSearchProps> = ({ query, onLocatio
             </p>
           ))
         ) : (
-          <p className="text-xs text-gray-400 tracking-tighter p-2">
-            No locations found for "{query}"
-          </p>
+                           <p className="text-xs text-gray-400 tracking-tighter p-2">
+                   No locations found for &ldquo;{query}&rdquo;
+                 </p>
         )}
       </div>
     </div>

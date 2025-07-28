@@ -6,6 +6,7 @@ import { formatDateRange, getTotalGuestsText, SearchMode, GuestType } from '@/li
 import { LocationSearch } from './LocationSearch';
 import { DateSelector } from './DateSelector';
 import { GuestSelector } from './GuestSelector';
+import Image from 'next/image';
 
 interface SearchCardProps {
     searchQuery: string;
@@ -13,14 +14,14 @@ interface SearchCardProps {
     selectedDates: Date[];
     onDatesChange: (dates: Date[]) => void;
     guests: number;
-    children: number;
+    childrenCount: number;
     onGuestChange: (type: GuestType, increment: boolean) => void;
 }
 
 export const SearchCard: React.FC<SearchCardProps> = ({
     searchQuery, onSearchQueryChange,
     selectedDates, onDatesChange,
-    guests, children, onGuestChange,
+    guests, childrenCount, onGuestChange,
 }) => {
     const router = useRouter();
     const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -80,10 +81,10 @@ export const SearchCard: React.FC<SearchCardProps> = ({
                 </div>
                 <div className="flex items-center gap-1 cursor-pointer" onClick={() => openSearch('guests')}>
                     <Users size={12} className="text-gray-400" />
-                    <p className="text-xs tracking-tighter">{getTotalGuestsText(guests, children)}</p>
+                    <p className="text-xs tracking-tighter">{getTotalGuestsText(guests, childrenCount)}</p>
                 </div>
                 <button className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center hover:bg-orange-600 transition-colors" onClick={() => router.push('/search')}>
-                    <img src="/icons/search.svg" alt="Search" className="w-3.5 h-3.5" />
+                    <Image src="/icons/search.svg" alt="Search" width={14} height={14} className="w-3.5 h-3.5" />
                 </button>
             </div>
 
@@ -98,10 +99,11 @@ export const SearchCard: React.FC<SearchCardProps> = ({
                     {searchMode === 'guests' && (
                         <GuestSelector
                             guests={guests}
-                            children={children}
                             onGuestChange={onGuestChange}
                             onDone={() => setIsSearchOpen(false)}
-                        />
+                        >
+                            {childrenCount}
+                        </GuestSelector>
                     )}
                 </div>
             )}
